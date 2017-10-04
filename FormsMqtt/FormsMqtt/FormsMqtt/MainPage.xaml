@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FormsMqtt"
+             x:Class="FormsMqtt.MainPage">
+
+    <StackLayout VerticalOptions="Center" 
+           HorizontalOptions="Center">
+
+        <Label Text="Ip do dispositivo"/>
+        <Label Text="{Binding RetornoMqtt.MensagemRecuperada}"/>
+
+        <Button Text="Porta 1"  Command="{Binding AbrirPortaUmCommand }"></Button>
+        <Button Text="Porta 2" Command="{Binding AbrirPortaDoisCommand}"></Button>
+        <Button Text="Porta 3" Command="{Binding AbrirPortaTresCommand}"></Button>
+
+    </StackLayout>
+
+</ContentPage>
