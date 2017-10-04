@@ -13,6 +13,7 @@
         <Button Text="Porta 1"  Command="{Binding AbrirPortaUmCommand }"></Button>
         <Button Text="Porta 2" Command="{Binding AbrirPortaDoisCommand}"></Button>
         <Button Text="Porta 3" Command="{Binding AbrirPortaTresCommand}"></Button>
+        <Button Text="Desconectar" Command="{Binding DesconectarBrokerCommand}"></Button>
 
     </StackLayout>
 

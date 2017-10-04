@@ -20,6 +20,22 @@ namespace FormsMqtt.Droid.Servicos
         RetornoMqtt Retorno { get; set; }
 
         /// <summary>
+        /// Inicializa os eventos do mqtt
+        /// </summary>
+        private void InicializarEventos()
+        {
+            Cliente.MqttMsgPublishReceived += MqttClient_MqttMsgPublishReceived;
+            Cliente.MqttMsgSubscribed += MqttClient_MqttMsgSubscribed;
+            Cliente.MqttMsgUnsubscribed += MqttClient_MqttMsgUnsubscribed;
+            Cliente.MqttMsgPublished += MqttClient_MqttMsgPublished;
+            Cliente.ConnectionClosed += Cliente_ConnectionClosed;
+
+            Retorno = new RetornoMqtt();
+        }
+
+        #region Implementação da Interface
+
+        /// <summary>
         /// Efetua a conexao com o broker informado
         /// </summary>
         /// <returns></returns>
@@ -72,18 +88,7 @@ namespace FormsMqtt.Droid.Servicos
                 });
         }
 
-        /// <summary>
-        /// Inicializa os eventos do mqtt
-        /// </summary>
-        private void InicializarEventos()
-        {
-            Cliente.MqttMsgPublishReceived += MqttClient_MqttMsgPublishReceived;
-            Cliente.MqttMsgSubscribed += MqttClient_MqttMsgSubscribed;
-            Cliente.MqttMsgUnsubscribed += MqttClient_MqttMsgUnsubscribed;
-            Cliente.MqttMsgPublished += MqttClient_MqttMsgPublished;
-
-            Retorno = new RetornoMqtt();
-        }
+        #endregion
 
         #region Eventos
 
@@ -115,7 +120,7 @@ namespace FormsMqtt.Droid.Servicos
         /// <param name="e"></param>
         private void MqttClient_MqttMsgSubscribed(object sender, MqttMsgSubscribedEventArgs e)
         {
-
+           
         }
 
 
@@ -134,6 +139,17 @@ namespace FormsMqtt.Droid.Servicos
             }
 
             Xamarin.Forms.MessagingCenter.Send<RetornoMqtt>(Retorno, e.Topic);
+        }
+
+        /// <summary>
+        /// Evento que dispara quando a conexão com o broker termina inesperadamente 
+        /// Dispara sempre no Disconnect
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Cliente_ConnectionClosed(object sender, System.EventArgs e)
+        {
+            Conectar();
         }
 
         #endregion

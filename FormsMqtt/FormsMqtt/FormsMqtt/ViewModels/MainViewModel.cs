@@ -6,6 +6,7 @@ using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
+using System;
 
 namespace FormsMqtt.ViewModels
 {
@@ -18,6 +19,7 @@ namespace FormsMqtt.ViewModels
         public ICommand AbrirPortaUmCommand { get; private set; }
         public ICommand AbrirPortaDoisCommand { get; private set; }
         public ICommand AbrirPortaTresCommand { get; private set; }
+        public ICommand DesconectarBrokerCommand { get; private set; }
 
         readonly IMqttService MqttService;
         readonly IMessageService MessageService;
@@ -61,9 +63,15 @@ namespace FormsMqtt.ViewModels
             AbrirPortaUmCommand = new Command(AbrirPortaUm);
             AbrirPortaDoisCommand = new Command(AbrirPortaDois);
             AbrirPortaTresCommand = new Command(AbrirPortaTres);
+            DesconectarBrokerCommand = new Command(Desconectar);
 
             Inicializar();
         }
+
+        /// <summary>
+        /// Efetua a desconexão com o broker
+        /// </summary>
+        private void Desconectar()=> MqttService.Desconectar();
 
         /// <summary>
         /// inicializa a conexão com o broker

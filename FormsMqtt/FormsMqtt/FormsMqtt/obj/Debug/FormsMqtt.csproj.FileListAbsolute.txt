@@ -19,3 +19,4 @@ C:\Users\thiago.chagas.BLNET\Source\Repos\MqttXamarinForms\FormsMqtt\FormsMqtt\F
 C:\Users\thiago.chagas.BLNET\Source\Repos\MqttXamarinForms\FormsMqtt\FormsMqtt\FormsMqtt\obj\Debug\FormsMqtt.App.xaml.g.cs
 C:\Users\thiago.chagas.BLNET\Source\Repos\MqttXamarinForms\FormsMqtt\FormsMqtt\FormsMqtt\obj\Debug\FormsMqtt.dll
 C:\Users\thiago.chagas.BLNET\Source\Repos\MqttXamarinForms\FormsMqtt\FormsMqtt\FormsMqtt\obj\Debug\FormsMqtt.pdb
+C:\Users\thiago.chagas.BLNET\Source\Repos\MqttXamarinForms\FormsMqtt\FormsMqtt\FormsMqtt\obj\Debug\FormsMqtt.csprojResolveAssemblyReference.cache
