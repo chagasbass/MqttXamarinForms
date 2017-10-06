@@ -30,6 +30,7 @@ C:\Users\thiago.chagas.BLNET\Source\Repos\MqttXamarinForms\FormsMqtt\FormsMqtt\F
 C:\Users\thiago.chagas.BLNET\Source\Repos\MqttXamarinForms\FormsMqtt\FormsMqtt\FormsMqtt.Android\obj\Debug\android\assets\System.ObjectModel.dll
 C:\Users\thiago.chagas.BLNET\Source\Repos\MqttXamarinForms\FormsMqtt\FormsMqtt\FormsMqtt.Android\obj\Debug\android\assets\System.Diagnostics.Debug.dll
 C:\Users\thiago.chagas.BLNET\Source\Repos\MqttXamarinForms\FormsMqtt\FormsMqtt\FormsMqtt.Android\obj\Debug\android\assets\System.Threading.Tasks.dll
+C:\Users\thiago.chagas.BLNET\Source\Repos\MqttXamarinForms\FormsMqtt\FormsMqtt\FormsMqtt.Android\obj\Debug\android\assets\FormsLib.dll
 C:\Users\thiago.chagas.BLNET\Source\Repos\MqttXamarinForms\FormsMqtt\FormsMqtt\FormsMqtt.Android\obj\Debug\android\assets\System.Threading.dll
 C:\Users\thiago.chagas.BLNET\Source\Repos\MqttXamarinForms\FormsMqtt\FormsMqtt\FormsMqtt.Android\obj\Debug\android\assets\System.Collections.dll
 C:\Users\thiago.chagas.BLNET\Source\Repos\MqttXamarinForms\FormsMqtt\FormsMqtt\FormsMqtt.Android\obj\Debug\android\assets\System.Text.Encoding.dll

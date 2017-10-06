@@ -42,10 +42,19 @@ namespace FormsMqtt.Droid.Servicos
         public bool Conectar()
         {
             Cliente = new MqttClient(InfoConexao.BrokerIp);
-            Cliente.Connect(InfoConexao.ClienteId, InfoConexao.Usuario, InfoConexao.Senha);
+            Cliente.Connect(InfoConexao.ClienteId);
 
             InicializarEventos();
 
+            return Cliente.IsConnected;
+        }
+
+        /// <summary>
+        /// Verifica se a conexao com o broker está ativa.
+        /// </summary>
+        /// <returns></returns>
+        public bool VerificarConexao()
+        {
             return Cliente.IsConnected;
         }
 

@@ -1,10 +1,12 @@
 C:\Users\thiago.chagas.BLNET\Source\Repos\MqttXamarinForms\FormsMqtt\FormsMqtt\FormsMqtt\bin\Debug\FormsMqtt.dll
 C:\Users\thiago.chagas.BLNET\Source\Repos\MqttXamarinForms\FormsMqtt\FormsMqtt\FormsMqtt\bin\Debug\FormsMqtt.pdb
+C:\Users\thiago.chagas.BLNET\Source\Repos\MqttXamarinForms\FormsMqtt\FormsMqtt\FormsMqtt\bin\Debug\FormsLib.dll
 C:\Users\thiago.chagas.BLNET\Source\Repos\MqttXamarinForms\FormsMqtt\FormsMqtt\FormsMqtt\bin\Debug\Plugin.Connectivity.Abstractions.dll
 C:\Users\thiago.chagas.BLNET\Source\Repos\MqttXamarinForms\FormsMqtt\FormsMqtt\FormsMqtt\bin\Debug\Plugin.Connectivity.dll
 C:\Users\thiago.chagas.BLNET\Source\Repos\MqttXamarinForms\FormsMqtt\FormsMqtt\FormsMqtt\bin\Debug\Xamarin.Forms.Core.dll
 C:\Users\thiago.chagas.BLNET\Source\Repos\MqttXamarinForms\FormsMqtt\FormsMqtt\FormsMqtt\bin\Debug\Xamarin.Forms.Platform.dll
 C:\Users\thiago.chagas.BLNET\Source\Repos\MqttXamarinForms\FormsMqtt\FormsMqtt\FormsMqtt\bin\Debug\Xamarin.Forms.Xaml.dll
+C:\Users\thiago.chagas.BLNET\Source\Repos\MqttXamarinForms\FormsMqtt\FormsMqtt\FormsMqtt\bin\Debug\FormsLib.pdb
 C:\Users\thiago.chagas.BLNET\Source\Repos\MqttXamarinForms\FormsMqtt\FormsMqtt\FormsMqtt\bin\Debug\Plugin.Connectivity.pdb
 C:\Users\thiago.chagas.BLNET\Source\Repos\MqttXamarinForms\FormsMqtt\FormsMqtt\FormsMqtt\bin\Debug\Plugin.Connectivity.xml
 C:\Users\thiago.chagas.BLNET\Source\Repos\MqttXamarinForms\FormsMqtt\FormsMqtt\FormsMqtt\bin\Debug\Plugin.Connectivity.Abstractions.pdb
@@ -19,4 +21,3 @@ C:\Users\thiago.chagas.BLNET\Source\Repos\MqttXamarinForms\FormsMqtt\FormsMqtt\F
 C:\Users\thiago.chagas.BLNET\Source\Repos\MqttXamarinForms\FormsMqtt\FormsMqtt\FormsMqtt\obj\Debug\FormsMqtt.App.xaml.g.cs
 C:\Users\thiago.chagas.BLNET\Source\Repos\MqttXamarinForms\FormsMqtt\FormsMqtt\FormsMqtt\obj\Debug\FormsMqtt.dll
 C:\Users\thiago.chagas.BLNET\Source\Repos\MqttXamarinForms\FormsMqtt\FormsMqtt\FormsMqtt\obj\Debug\FormsMqtt.pdb
-C:\Users\thiago.chagas.BLNET\Source\Repos\MqttXamarinForms\FormsMqtt\FormsMqtt\FormsMqtt\obj\Debug\FormsMqtt.csprojResolveAssemblyReference.cache

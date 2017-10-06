@@ -13,5 +13,6 @@ namespace FormsMqtt.Mqtt.Servicos
         void Desconectar();
         void PublicarMensagem(string topico, string mensagem);
         void SubscribeMensagem(string[] topicos);
+        bool VerificarConexao();
     }
 }

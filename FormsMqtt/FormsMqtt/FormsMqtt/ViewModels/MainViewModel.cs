@@ -1,12 +1,11 @@
-﻿using FormsMqtt.Mqtt.Modelos;
+﻿using FormsLib;
+using FormsMqtt.Mqtt.Modelos;
 using FormsMqtt.Mqtt.Servicos;
 using FormsMqtt.Servicos.Interfaces;
-using Plugin.Connectivity;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
-using System;
 
 namespace FormsMqtt.ViewModels
 {
@@ -71,7 +70,7 @@ namespace FormsMqtt.ViewModels
         /// <summary>
         /// Efetua a desconexão com o broker
         /// </summary>
-        private void Desconectar()=> MqttService.Desconectar();
+        private void Desconectar() => MqttService.Desconectar();
 
         /// <summary>
         /// inicializa a conexão com o broker
@@ -93,16 +92,10 @@ namespace FormsMqtt.ViewModels
         /// </summary>
         private async void AbrirPortaUm()
         {
-            VerificarSeDispositivoEstaDisponivel();
-
-            if (!EstaDisponivel)
-            {
+            if (MqttService.VerificarConexao() && VerificarSeDispositivoEstaDisponivel())
+                MqttService.PublicarMensagem("sala/ventilador", "ligado");
+            else
                 await MessageService.MostrarDialog("Atenção", "Dispositivo indisponível no momento");
-                return;
-            }
-
-            MqttService.PublicarMensagem("sala/dispositivo", "ligado");
-            await MessageService.MostrarDialog("Atenção", "Acesso efetuado");
         }
 
         /// <summary>
@@ -112,16 +105,11 @@ namespace FormsMqtt.ViewModels
         {
             try
             {
-                VerificarSeDispositivoEstaDisponivel();
-
-                if (!EstaDisponivel)
-                {
+                if (MqttService.VerificarConexao() && VerificarSeDispositivoEstaDisponivel())
+                    MqttService.PublicarMensagem("quarto/ventilador", "ligado");
+                else
                     await MessageService.MostrarDialog("Atenção", "Dispositivo indisponível no momento");
-                    return;
-                }
 
-                MqttService.PublicarMensagem("quarto/dispositivo", "ligado");
-                await MessageService.MostrarDialog("Atenção", "Acesso efetuado");
             }
             catch (System.Exception ex)
             {
@@ -134,16 +122,10 @@ namespace FormsMqtt.ViewModels
         /// </summary>
         private async void AbrirPortaTres()
         {
-            VerificarSeDispositivoEstaDisponivel();
-
-            if (!EstaDisponivel)
-            {
+            if (MqttService.VerificarConexao() && VerificarSeDispositivoEstaDisponivel())
+                MqttService.PublicarMensagem("cozinha/ventilador", "ligado");
+            else
                 await MessageService.MostrarDialog("Atenção", "Dispositivo indisponível no momento");
-                return;
-            }
-
-            MqttService.PublicarMensagem("cozinha/dispositivo", "ligado");
-            await MessageService.MostrarDialog("Atenção", "Acesso efetuado");
         }
 
         /// <summary>
@@ -163,25 +145,13 @@ namespace FormsMqtt.ViewModels
         }
 
         /// <summary>
-        /// Verifica se o dispositivo está disponível pelo ip informado
+        /// Verifica se existe conexão com a internet
         /// </summary>
         /// <returns></returns>
-        public async void VerificarSeDispositivoEstaDisponivel()
+        public bool VerificarSeDispositivoEstaDisponivel()
         {
-            try
-            {
-                var conectividade = CrossConnectivity.Current;
-                if (conectividade.IsConnected)
-                {
-                    EstaDisponivel = await conectividade.IsRemoteReachable(_RetornoMqtt.MensagemRecuperada);
-                    return;
-                }
-            }
-            catch (System.Exception ex)
-            {
-                var m = ex.Message;
-                EstaDisponivel = false;
-            }
+            var pingService = new PingService();
+            return pingService.VerificarSeDispositivoEstaAtivo(_RetornoMqtt.MensagemRecuperada);
         }
     }
 }
