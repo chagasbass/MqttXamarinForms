@@ -2,6 +2,7 @@
 using FormsMqtt.Mqtt.Modelos;
 using FormsMqtt.Mqtt.Servicos;
 using FormsMqtt.Servicos.Interfaces;
+using System;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -109,7 +110,6 @@ namespace FormsMqtt.ViewModels
                     MqttService.PublicarMensagem("quarto/ventilador", "ligado");
                 else
                     await MessageService.MostrarDialog("Atenção", "Dispositivo indisponível no momento");
-
             }
             catch (System.Exception ex)
             {
@@ -152,6 +152,18 @@ namespace FormsMqtt.ViewModels
         {
             var pingService = new PingService();
             return pingService.VerificarSeDispositivoEstaAtivo(_RetornoMqtt.MensagemRecuperada);
+        }
+
+        public void Verificar()
+        {
+            var minutes = TimeSpan.FromMinutes(3);
+
+            Device.StartTimer(minutes, () => {
+
+              MqttService.Conectar();
+
+                return true;
+            });
         }
     }
 }
